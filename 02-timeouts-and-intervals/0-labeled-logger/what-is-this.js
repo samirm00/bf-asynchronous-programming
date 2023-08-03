@@ -8,11 +8,11 @@ import { labeledLogger } from '../../lib/labeled-logger.js';
     - label so you can tell which logger was called
     - the time you created the labeled logger
     - how many times you've called the logger
-    - the time delay in millisenconds for each log
+    - the time delay in milliseconds for each log
     - the callstack for each log
 
   clicking on each log's label will show you the callstack at that point
-    this is hepful for finding the line of code for each log
+    this is helpful for finding the line of code for each log
     and for knowing if a log is synchronous or asynchronous
 
   you don't need to understand how the function is implemented
@@ -25,7 +25,7 @@ const { log, error } = labeledLogger();
 
 // then use it just like console.log!
 log('hello');
-log('click on this label ^ to see a syncrhonous callstack');
+log('click on this label ^ to see a synchronous callstack');
 
 // or like console.error
 //  this will be useful for studying promises
@@ -40,7 +40,7 @@ setTimeout(callback1, 2000);
 
 const callback2 = () => {
     log('at least 1000 ms later');
-    log('click on this label ^ to see an asyncrhonous callstack');
+    log('click on this label ^ to see an asynchronous callstack');
 };
 setTimeout(callback2, 1000);
 
