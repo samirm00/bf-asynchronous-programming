@@ -13,7 +13,7 @@ const { log } = labeledLogger();
 //  in other words, it executes your callback asynchronously
 
 const callback1 = () => {
-    debugger; // ??!!
+    debugger;
     log('hello from timeout 1'); // log 5
 };
 setTimeout(callback1, 3000);
@@ -21,7 +21,7 @@ setTimeout(callback1, 3000);
 log('scheduled timeout 1'); // log 1
 
 const callback2 = () => {
-    debugger; // ??!!
+    debugger;
     log('bonjour from timeout 2'); // log 4
 };
 setTimeout(callback2, 2000);

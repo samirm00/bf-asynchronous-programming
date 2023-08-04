@@ -11,7 +11,7 @@ const { log } = labeledLogger();
       `resolve` was called
   - rejected (settled):
       `reject` was called
-      OR an error occured
+      OR an error occurred
 
   if you inspect the promises in your console you will see two things:
     PromiseState: is the promise fulfilled, rejected or pending ?
