@@ -1,5 +1,5 @@
 // fulfilled promise
-new Promise((resolve) => {
+new Promise((resolve, reject) => {
     console.log('resolve executor');
     resolve('success!');
 })

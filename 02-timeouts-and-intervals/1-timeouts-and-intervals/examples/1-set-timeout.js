@@ -30,4 +30,4 @@ log('scheduled timeout 2'); // log 2
 
 log('= = = =  the call stack is empty  = = = ='); // log 3
 
-debugger;
+

@@ -32,12 +32,12 @@ console.log('begin synchronous 5000 ms');
 
 synchronousTimeout(() => {
     console.log('end synchronous 5000 ms');
-}, 5000);
+}, 5 * 1000);
 
 console.log('schedule async 5000 ms');
 
 setTimeout(() => {
     console.log('executing async 5000 ms');
-}, 5000);
+}, 5 * 1000);
 
 console.log('= =  the call stack is empty  = =');
