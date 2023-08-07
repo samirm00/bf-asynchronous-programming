@@ -23,7 +23,7 @@ new Promise((resolve, reject) => {
         log('resolved value: ', resolvedValue);
     })
     .catch((rejectionValue) => {
-        log('rejected value: ', rejectionValue);
+        error('rejected value: ', rejectionValue);
     });
 
 log('= = = =  the call stack is empty  = = = =');

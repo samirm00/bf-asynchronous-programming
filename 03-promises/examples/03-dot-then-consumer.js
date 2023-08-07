@@ -32,7 +32,7 @@ const logResolved = (value) => {
     log(value);
 };
 
-new Promise((resolve) => {
+new Promise((resolve, reject) => {
     log('in executor'); // 1
     resolve('success!');
 })
