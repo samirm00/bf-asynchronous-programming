@@ -6,17 +6,15 @@
 //  setTimeout sends your callback around the event loop
 //  in other words, it executes your callback asynchronously
 
-const callback1 = () => {
+setTimeout(() => {
     console.log('hello from timeout 1');
-};
-setTimeout(callback1, 3000);
+}, 3 * 1000);
 
 console.log('scheduled timeout 1');
 
-const callback2 = () => {
+setTimeout(() => {
     console.log('bonjour from timeout 2');
-};
-setTimeout(callback2, 2000);
+}, 2 * 1000);
 
 console.log('scheduled timeout 2');
 
