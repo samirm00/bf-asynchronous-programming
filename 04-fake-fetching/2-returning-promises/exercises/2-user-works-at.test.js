@@ -6,10 +6,17 @@ const { log } = labeledLogger();
 
 // --- declare function ---
 
-/**
- *
- */
-const userWorksAt = () => {};
+const userWorksAt = (id, company) => {
+    return fetchUserById(id)
+        .then((userData) => {
+            if (userData.company.name === company) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        .catch((err) => console.error(err));
+};
 
 // --- test function ---
 
@@ -26,7 +33,7 @@ describe('userWorksAt checks if a user works at a specific company', () => {
     });
     it('user 6 does work at Considine-Lockman', () => {
         return userWorksAt(6, 'Considine-Lockman').then((actual) => {
-            expect(actual).toEqual(true); // Correct value is true not false
+            expect(actual).toEqual(true);
         });
     });
     it('user 7 does not work at John Groups', () => {

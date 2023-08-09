@@ -25,6 +25,7 @@ const { log } = labeledLogger();
  * @throws {Error} {status number}: {status text}
  */
 const getUserName = (id = 1) => {
+  debugger;
     log('fetching user ' + id);
     const userPromise = fetchUserById(id);
 

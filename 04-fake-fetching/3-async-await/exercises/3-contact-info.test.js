@@ -8,7 +8,17 @@ const { log } = labeledLogger();
  *
  * @async
  */
-const contactInfo = async () => {};
+const contactInfo = async (id) => {
+    const userData = await fetchUserById(id);
+    const info = [
+        userData.email,
+        userData.phone,
+        userData.website,
+        userData.address.zipcode,
+    ];
+
+    return info;
+};
 
 describe("contactInfo returns a specific user's contact info", () => {
     it("gets user 3's info", async () => {
