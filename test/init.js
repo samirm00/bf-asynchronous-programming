@@ -44,7 +44,7 @@ URI is a broad term that includes both URLs and URNs.
 /*
 encodeURI and encodeURIComponent
 --------------------------------
-1- encodeURI : it encode a certain characters except some special characters :, /, ?, &, and #
+1- encodeURI : it encodes a certain characters except some special characters :, /, ?, &, and #
 2- encodeURIComponent : it encode a certain characters including :, /, ?, &, and #
 Notes : 
 - encodeURI  : you will use it most of the times if not always
