@@ -1,55 +1,59 @@
-// Sequential vs Parallel
+/*
+Promise.all()
+-------------
+is a method in JavaScript that takes an array of promises and returns a single promise
+that resolves when all of promises have resolved, 
+or rejects as soon as one of the promises rejects.
 
-// The function given below fetches data from the server one-by-one
-const fetchFilterData1 = async () => {
+*/
+
+const getPokemonById = async (id) => {
     try {
-        const brands = await fetchBrands(); // 1
-        const sizes = await fetchSizes(); //  2
-        const occasions = await fetchOccasions(); // 3
-        const idealFor = await fetchIdealFor(); // 4
-        const neckTypes = await fetchNeckTypes(); // 5
-        const sleeveTypes = await fetchSleeveTypes(); // 6
-        const patterns = await fetchPatterns(); // 7
-        const color = await fetchColors(); // 8
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 
-        // Now, display list of fetched data in filters
-    } catch (error) {
-        console.log('Something went wrong!');
-        // Push the error to your crash analytics to track the bug
+        if (!res.ok) {
+            throw new Error(
+                `An error has occurred while fetching pokemon with id : ${id} and status: ${res.status}`,
+            );
+        }
+
+        const data = await res.json();
+        return data;
+    } catch (err) {
+        console.error('There was an error fetching the Pokémon:', err);
+        return null;
     }
 };
 
-// lets consider the below function that fetches data from server
-const fetchFilterData2 = async () => {
-    return Promise.all([
-        fetchBrands(),
-        fetchSizes(),
-        fetchOccasions(),
-        fetchIdealFor(),
-        fetchNeckTypes(),
-        fetchSleeveTypes(),
-        fetchPatterns(),
-        fetchColors(),
-    ]);
+const getPokemons = async (ids = []) => {
+    const pokemonPromises = ids.map((id) => getPokemonById(id));
+    const pokemons = await Promise.all(pokemonPromises);
+    console.log(pokemons);
 };
 
-const renderFilter = async () => {
-    try {
-        const [
-            brands,
-            sizes,
-            occasions,
-            idealFor,
-            neckTypes,
-            sleeveTypes,
-            patterns,
-            color,
-        ] = await fetchFilterData2();
+getPokemons([1, 23, 4, 5, 6, 7]);
 
-        // Now, display list of fetched data in filters
-    } catch (error) {
-        console.log('Something went wrong!');
-        // Push the error to your crash analytics to track the bug
-    }
-};
-           
+/*
+URI (Uniform Resource Identifier)
+---------------------------------
+URI is a broad term that includes both URLs and URNs.
+1- URL (Uniform Resource Locator):  https://www.example.com/page
+2- URN (Uniform Resource Name): urn:isbn:0451450523
+*/
+
+/*
+encodeURI and encodeURIComponent
+--------------------------------
+1- encodeURI : it encode a certain characters except some special characters :, /, ?, &, and #
+2- encodeURIComponent : it encode a certain characters including :, /, ?, &, and #
+Notes : 
+- encodeURI  : you will use it most of the times if not always
+- encodeURIComponent :  used only on a part of the URI
+*/
+const uri = 'https://www.example.com/query?name=John Doe';
+const result1 = encodeURI(uri); // "https://www.example.com/query?name=John%20Doe"
+console.log('encodeURI', result1);
+
+const queryParam = 'name=John Doe&age=30';
+const result2 = encodeURIComponent(queryParam); // "name%3DJohn%20Doe%26age%3D30"
+console.log('encodeURIComponent', result2);

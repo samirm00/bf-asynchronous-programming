@@ -20,7 +20,9 @@ const slowString = delayedValue(log);
 
 const main = async () => {
     const hello = await slowString('hello!');
+    const goodBye = await slowString('Good Bye!');
     log(hello);
+    log(goodBye);
 };
 
 main();

@@ -24,19 +24,19 @@ describe('contactDetails: returns an array of user contact details', () => {
         it('finds contact details for users 6, 1, 2', async () => {
             const actual = await contactDetails([6, 1, 2]);
             expect(actual).toEqual([
-                '6. Karley_Dach@jasper.info, 1-477-935-8478 x6430, ola.org',
-                '1. Sincere@april.biz, 1-770-736-8031 x56442, hildegard.org',
-                '2. Shanna@melissa.tv, 010-692-6593 x09125, anastasia.net',
+                '6: Karley_Dach@jasper.info, 1-477-935-8478 x6430, ola.org',
+                '1: Sincere@april.biz, 1-770-736-8031 x56442, hildegard.org',
+                '2: Shanna@melissa.tv, 010-692-6593 x09125, anastasia.net',
             ]);
         });
         it('finds contact details for all odd users', async () => {
             const actual = await contactDetails([1, 3, 5, 7, 9]);
             expect(actual).toEqual([
-                '1. Sincere@april.biz, 1-770-736-8031 x56442, hildegard.org',
-                '3. Nathan@yesenia.net, 1-463-123-4447, ramiro.info',
-                '5. Lucio_Hettinger@annie.ca, (254)954-1289, demarco.info',
-                '7. Telly.Hoeger@billy.biz, 210.067.6132, elvis.io',
-                '9. Chaim_McDermott@dana.io, (775)976-6794 x41206, conrad.com',
+                '1: Sincere@april.biz, 1-770-736-8031 x56442, hildegard.org',
+                '3: Nathan@yesenia.net, 1-463-123-4447, ramiro.info',
+                '5: Lucio_Hettinger@annie.ca, (254)954-1289, demarco.info',
+                '7: Telly.Hoeger@billy.biz, 210.067.6132, elvis.io',
+                '9: Chaim_McDermott@dana.io, (775)976-6794 x41206, conrad.com',
             ]);
         });
     });
@@ -59,8 +59,8 @@ describe('contactDetails: returns an array of user contact details', () => {
             const actual = await contactDetails([0, 1, 2]);
             expect(actual).toEqual([
                 '404: Not Found: there is no user with id 0',
-                '1. Sincere@april.biz, 1-770-736-8031 x56442, hildegard.org',
-                '2. Shanna@melissa.tv, 010-692-6593 x09125, anastasia.net',
+                '1: Sincere@april.biz, 1-770-736-8031 x56442, hildegard.org',
+                '2: Shanna@melissa.tv, 010-692-6593 x09125, anastasia.net',
             ]);
         });
     });
