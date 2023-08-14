@@ -48,6 +48,11 @@ You can also run tests directly from CLI using the NPM script:
 
 ### Week1
 
+- [day 1](https://youtu.be/76TYxlYyLkE)
+- [day 2](https://youtu.be/SZfgzshOHCo)
+- [day 3](https://youtu.be/FwaPAZHrVvg)
+- [day 5](https://youtu.be/5kBaW2W-xCM)
+
 ### Week2
 
 ### Week3
