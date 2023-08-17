@@ -4,16 +4,16 @@
         <meta charset="utf-8" />
         <title>explore users</title>
 
-        <link href="./styles.css" rel="stylesheet" />
+        <link href="./styles/styles.css" rel="stylesheet" />
     </head>
 
     <body>
         <form>
-            <input type="number" name="userId" value="1" />
-            <input type="button" id="choose-user-button" value="view user" />
+            <input type="number" id="input" />
+            <button type="submit" id="btn">Get user</button>
         </form>
+        <div id="error"></div>
         <div id="root"></div>
-
         <script type="module" src="./src/init.js"></script>
     </body>
 </html>
